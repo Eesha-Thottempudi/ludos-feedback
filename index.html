@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>LUDOS Feedback</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<div class="container">
+
+  <!-- Progress Bar -->
+  <div class="progress-bar">
+    <div class="progress"></div>
+  </div>
+
+  <form id="feedbackForm" action="https://formspree.io/f/xqeyogag" method="POST">
+
+    <!-- ✅ STEP 1: PREMIUM WELCOME -->
+    <div class="step active welcome">
+
+      <div class="hero">
+        <h1 class="main-title">LUDOS</h1>
+        <p class="tagline">Let Us Do Science</p>
+
+        <p class="org">
+          Organized by <b>Ministry of Science & Technology</b><br>
+          in collaboration with <b>GITAM School of Science</b>
+        </p>
+
+        <div class="date-badge">📅 24 March 2026</div>
+
+        <p class="desc">
+          Science is not just theory — it is curiosity, creativity, and exploration. <br><br>
+          LUDOS aims to ignite young minds by transforming learning into hands-on discovery 
+          through innovative student projects.
+        </p>
+
+        <button type="button" onclick="nextStep()">Start Feedback</button>
+      </div>
+
+      <!-- Floating icons -->
+      <div class="floating-icons">
+        <span>🔬</span>
+        <span>⚙️</span>
+        <span>🧪</span>
+        <span>🚀</span>
+      </div>
+
+    </div>
+
+    <!-- STEP 2: Visitor Details -->
+    <div class="step">
+      <h2>Visitor Details</h2>
+
+      <input list="visitors" name="name" placeholder="Enter your Name" required>
+      <datalist id="visitors">
+        <option value="Ravi Kumar">
+        <option value="Sneha Reddy">
+        <option value="Anil Sharma">
+      </datalist>
+
+      <select name="profession" required>
+        <option value="">Select Profession</option>
+        <option>Student</option>
+        <option>Teacher</option>
+        <option>Other</option>
+      </select>
+
+      <input type="text" name="organization" placeholder="Organization (optional)">
+      <input type="email" name="email" placeholder="Email (optional)">
+
+      <button type="button" onclick="nextStep()">Next</button>
+    </div>
+
+    <!-- ✅ STEP 3: PROJECTS WITH SCROLL -->
+    <div class="step">
+      <h2>Select a Project</h2>
+
+      <div class="project-scroll">
+        <div class="project-grid">
+
+          <label class="card"><input type="radio" name="project" value="Project 1"><span>Project 1</span></label>
+          <label class="card"><input type="radio" name="project" value="Project 2"><span>Project 2</span></label>
+          <label class="card"><input type="radio" name="project" value="Project 3"><span>Project 3</span></label>
+          <label class="card"><input type="radio" name="project" value="Project 4"><span>Project 4</span></label>
+          <label class="card"><input type="radio" name="project" value="Project 5"><span>Project 5</span></label>
+          <label class="card"><input type="radio" name="project" value="Project 6"><span>Project 6</span></label>
+          <label class="card"><input type="radio" name="project" value="Project 7"><span>Project 7</span></label>
+          <label class="card"><input type="radio" name="project" value="Project 8"><span>Project 8</span></label>
+          <label class="card"><input type="radio" name="project" value="Project 9"><span>Project 9</span></label>
+          <label class="card"><input type="radio" name="project" value="Project 10"><span>Project 10</span></label>
+          <label class="card"><input type="radio" name="project" value="Project 11"><span>Project 11</span></label>
+          <label class="card"><input type="radio" name="project" value="Project 12"><span>Project 12</span></label>
+          <label class="card"><input type="radio" name="project" value="Project 13"><span>Project 13</span></label>
+          <label class="card"><input type="radio" name="project" value="Project 14"><span>Project 14</span></label>
+          <label class="card"><input type="radio" name="project" value="Project 15"><span>Project 15</span></label>
+
+        </div>
+      </div>
+
+      <button type="button" onclick="nextStep()">Next</button>
+    </div>
+
+    <!-- STEP 4: Feedback -->
+    <div class="step">
+      <h2>Rate the Project</h2>
+
+      <label>Innovation</label>
+      <div class="stars" data-name="innovation"></div>
+
+      <label>Technical Complexity</label>
+      <div class="stars" data-name="tech"></div>
+
+      <label>Presentation</label>
+      <div class="stars" data-name="presentation"></div>
+
+      <label>Practical Impact</label>
+      <div class="stars" data-name="impact"></div>
+
+      <label>Overall Experience</label>
+      <div class="stars" data-name="overall"></div>
+
+      <input type="hidden" name="innovation" id="innovationInput">
+      <input type="hidden" name="tech" id="techInput">
+      <input type="hidden" name="presentation" id="presentationInput">
+      <input type="hidden" name="impact" id="impactInput">
+      <input type="hidden" name="overall" id="overallInput">
+
+      <button type="button" onclick="nextStep()">Next</button>
+    </div>
+
+    <!-- STEP 5: Top Projects -->
+    <div class="step">
+      <h2>Top 3 Projects</h2>
+
+      <div class="project-grid">
+        <label class="card"><input type="checkbox" name="topProjects[]" value="Project 1"><span>Project 1</span></label>
+        <label class="card"><input type="checkbox" name="topProjects[]" value="Project 2"><span>Project 2</span></label>
+        <label class="card"><input type="checkbox" name="topProjects[]" value="Project 3"><span>Project 3</span></label>
+        <label class="card"><input type="checkbox" name="topProjects[]" value="Project 4"><span>Project 4</span></label>
+        <label class="card"><input type="checkbox" name="topProjects[]" value="Project 5"><span>Project 5</span></label>
+        <label class="card"><input type="checkbox" name="topProjects[]" value="Project 6"><span>Project 6</span></label>
+        <label class="card"><input type="checkbox" name="topProjects[]" value="Project 7"><span>Project 7</span></label>
+        <label class="card"><input type="checkbox" name="topProjects[]" value="Project 8"><span>Project 8</span></label>
+        <label class="card"><input type="checkbox" name="topProjects[]" value="Project 9"><span>Project 9</span></label>
+        <label class="card"><input type="checkbox" name="topProjects[]" value="Project 10"><span>Project 10</span></label>
+        <label class="card"><input type="checkbox" name="topProjects[]" value="Project 11"><span>Project 11</span></label>
+        <label class="card"><input type="checkbox" name="topProjects[]" value="Project 12"><span>Project 12</span></label>
+        <label class="card"><input type="checkbox" name="topProjects[]" value="Project 13"><span>Project 13</span></label>
+        <label class="card"><input type="checkbox" name="topProjects[]" value="Project 14"><span>Project 14</span></label>
+        <label class="card"><input type="checkbox" name="topProjects[]" value="Project 15"><span>Project 15</span></label>
+
+      </div>
+
+      <button type="submit">Submit</button>
+    </div>
+
+  </form>
+
+  <!-- Thank You -->
+  <div class="step" id="thankYou">
+    <h2>🎉 Thank You!</h2>
+    <p>Your feedback has been submitted.</p>
+    <button onclick="restart()">Submit Another Response</button>
+  </div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
